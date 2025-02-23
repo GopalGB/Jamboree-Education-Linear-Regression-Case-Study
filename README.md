@@ -1,27 +1,62 @@
-# Jamboree Education - Linear Regression Case Study
- 
 # Jamboree Education - Linear Regression
 
-## Overview
-This project focuses on predicting the probability of graduate admission using linear regression. Developed for Jamboree Education, the model leverages key applicant metrics such as GRE and TOEFL scores, University Rating, Statement of Purpose & Recommendation Strength, Undergraduate GPA, and Research Experience. The goal is to identify the critical factors influencing admission decisions and provide actionable insights to improve the admission prediction feature.
+This project develops a linear regression model to predict the probability of graduate admission for students applying to top Ivy League programs. Leveraging applicant data such as GRE and TOEFL scores, university rating, SOP/LOR strength, undergraduate GPA, and research experience, the model aims to provide actionable insights to improve admission chances.
 
-## Problem Statement
-Jamboree Education recently launched an online feature that estimates a student’s chances of admission into top graduate programs (IVY league colleges) from an Indian perspective. This project aims to:
-- **Understand the Factors:** Determine which applicant attributes significantly influence admission chances.
-- **Model Development:** Build and evaluate a linear regression model to predict the probability of admission.
-- **Actionable Insights:** Offer recommendations for both improving the model and guiding strategic decisions for prospective applicants and Jamboree’s feature enhancements.
+---
 
-## Dataset
-**Dataset Name:** `jamboree_admission.csv`
+## Table of Contents
 
-**Column Descriptions:**
-- **Serial No.:** Unique identifier for each record.
-- **GRE Scores:** Score out of 340.
-- **TOEFL Scores:** Score out of 120.
-- **University Rating:** Rating of the university (scale 1–5).
-- **Statement of Purpose and Letter of Recommendation Strength:** Rating (scale 1–5).
-- **Undergraduate GPA:** GPA on a scale of 10.
-- **Research Experience:** Binary indicator (0 for no research experience, 1 for research experience).
-- **Chance of Admit:** Probability of admission (ranging from 0 to 1).
+- [Jamboree Education - Linear Regression](#jamboree-education---linear-regression)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Problem Definition](#problem-definition)
+  - [Dataset Description](#dataset-description)
+  - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
 
-## Repository Structure
+---
+
+## Project Overview
+
+Jamboree Education has launched an online feature that estimates students' chances of admission to Ivy League graduate programs. This project:
+- Identifies the key factors influencing graduate admission.
+- Builds a linear regression model (with alternatives such as Ridge and Lasso) to predict the Chance of Admit.
+- Provides insights and recommendations to help students enhance their profiles and guide Jamboree in refining the prediction feature.
+
+---
+
+## Problem Definition
+
+The primary goal is to determine how various academic and qualitative features affect a student's chance of admission. By understanding these relationships, we can:
+- Guide students on where to focus (e.g., improving GRE/TOEFL scores or engaging in research).
+- Assist Jamboree in offering personalized advice and refining their online prediction tool.
+
+---
+
+## Dataset Description
+
+The dataset (`jamboree_admission.csv`) contains the following columns:
+
+- **Serial No.**: Unique identifier for each record.
+- **GRE Score**: GRE score (out of 340).
+- **TOEFL Score**: TOEFL score (out of 120).
+- **University Rating**: Rating of the university (scale 1–5).
+- **SOP**: Statement of Purpose strength (scale 1–5).
+- **LOR**: Letter of Recommendation strength (scale 1–5).
+- **CGPA**: Undergraduate GPA (scale 1–10).
+- **Research**: Research experience (binary: 0 for no, 1 for yes).
+- **Chance of Admit**: Target variable (continuous value from 0 to 1).
+
+---
+
+## Exploratory Data Analysis (EDA)
+
+The EDA phase includes:
+
+- **Data Inspection**: Checking the structure, data types, and summary statistics.
+  
+  ```python
+  df = pd.read_csv("data/jamboree_admission.csv")
+  print(df.info())
+  print(df.describe())
+  print(df.isnull().sum())
+```
